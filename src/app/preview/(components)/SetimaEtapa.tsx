@@ -1,4 +1,35 @@
+'use client'
+
+import { useEffect, useState } from "react";
+
 export default function SetimaEtapa() {
+
+  const [timeLeft, setTimeLeft] = useState(15 * 60);
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes.toString().padStart(2, "0")}:${remainingSeconds
+      .toString()
+      .padStart(2, "0")}`;
+  };
+
+  useEffect(() => {
+    // Atualiza o tempo a cada segundo
+    const interval = setInterval(() => {
+      setTimeLeft((prevTimeLeft) => {
+        if (prevTimeLeft <= 0) {
+          clearInterval(interval); // Para o contador quando chegar a zero
+          return 0;
+        }
+        return prevTimeLeft - 1;
+      });
+    }, 1000);
+
+    // Limpa o intervalo ao desmontar o componente
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="w-full mx-auto max-w-[450px]">
       <div className="w-full !bg-white flex flex-col min-h-[100vh] flex-1">
@@ -81,7 +112,7 @@ export default function SetimaEtapa() {
             <strong>essa é a sua chance de ter certeza.</strong>
           </p>
           <div className="items-center rounded-full border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent flex py-[10px] mt-[50px] font-nunito px-[25px] font-normal text-base bg-amber-100 hover:bg-amber-100 text-amber-800 w-fit">
-            Oferta por tempo limitado:&nbsp;<div>14:32</div>
+            Oferta por tempo limitado:&nbsp;<div>{formatTime(timeLeft)}</div>
           </div>
           <div className="border bg-card text-card-foreground shadow-sm rounded-xl justify-between w-full flex items-start px-[20px] mt-[50px] py-[25px]">
             <div>

@@ -16,7 +16,7 @@ export async function GET(request: Request) {
       {
         method: 'GET',
         headers: {
-          'x-rapidapi-key': '68402ccc73mshfe6d856484311bdp14dcfbjsn0c2b36d8a1eb',
+          'x-rapidapi-key': process.env.RAPIDAPI_KEY as string, // Segura a chave da API no .env
           'x-rapidapi-host': 'instagram-scraper-api2.p.rapidapi.com'
         },
       }
