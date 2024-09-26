@@ -48,6 +48,7 @@ export default function QuartaEtapa({ onNextStep, onPrevStep }: { onNextStep: ()
             @{ig}
           </div>
 
+
           {/* Greeting */}
           <h1 className="text-black text-3xl mt-[20px] text-center font-nunito font-medium">
             Olá, {data.data.full_name}
