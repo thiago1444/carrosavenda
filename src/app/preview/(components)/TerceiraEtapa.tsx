@@ -15,6 +15,8 @@ export default function TerceiraEtapa({ onNextStep }: { onNextStep: () => void }
         const response = await axios.get(`/api/instagram/info?username_or_id_or_url=${ig}`);
 
         setData(response.data);
+        console.log(response.data);
+        
       } catch (error) {
         console.error('Erro ao buscar os dados:', error);
       } finally {

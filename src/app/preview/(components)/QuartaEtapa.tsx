@@ -32,7 +32,7 @@ export default function QuartaEtapa({ onNextStep, onPrevStep }: { onNextStep: ()
                 className="border-4 border-white min-w-[250px] w-[250px] !min-h-[250px] !h-[250px] rounded-full"
                 style={{
                   backgroundImage:
-                    `url(https://phosphor.ivanenko.workers.dev/?url=${data.data.profile_pic_url_hd})`,
+                    `url(https://phosphor.ivanenko.workers.dev/?url=${encodeURIComponent(data.data.hd_profile_pic_url_info.url)})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center center',
                   width: '250px',
