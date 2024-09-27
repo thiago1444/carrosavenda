@@ -19,7 +19,7 @@ interface ApiResponse {
 }
 
 export default function SextaEtapa({ onNextStep }: { onNextStep: () => void }) {
-  const { ip, ig } = useDataContext();
+const { ip, ig, data: data2 } = useDataContext();
 
   const [data, setData] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -364,7 +364,7 @@ export default function SextaEtapa({ onNextStep }: { onNextStep: () => void }) {
               <div className="messages select-none pointer-events-none space-y-[3px] pr-[20px]">
                 <div className="bg-[#262626] text-[14px] w-fit rounded-tr-3xl rounded-bl-[4px] rounded-br-3xl rounded-tl-3xl px-[14px] py-[8px] text-[#eee]">
                   <span>
-                    gabriel do <span className="blur-sm">dados ocultos</span>
+                    {data2.data.full_name} do <span className="blur-sm">dados ocultos</span>
                   </span>
                 </div>
                 <div className="bg-[#262626] text-[14px] w-fit rounded-tr-3xl rounded-tl-[4px] rounded-bl-[4px] rounded-br-3xl px-[14px] py-[8px] text-[#eee]">
@@ -416,7 +416,7 @@ export default function SextaEtapa({ onNextStep }: { onNextStep: () => void }) {
                 </div>
                 <div className="bg-[#262626] text-[14px] w-fit rounded-tr-3xl rounded-tl-[4px] rounded-bl-[4px] rounded-br-3xl px-[14px] py-[8px] text-[#eee]">
                   <span>
-                    to achando gabriel muito <span className="blur-sm">dados ocultos</span>
+                    to achando {data2.data.full_name} muito <span className="blur-sm">dados ocultos</span>
                   </span>
                 </div>
                 <div className="bg-[#262626] text-[14px] w-fit overflow-clip rounded-tr-3xl rounded-bl-3xl rounded-br-3xl rounded-tl-[4px] px-[14px] py-[8px] text-[#eee]">
