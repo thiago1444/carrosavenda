@@ -197,7 +197,6 @@ export default function SextaEtapa({ onNextStep }: { onNextStep: () => void }) {
                       y="50"
                       style={{ fill: "rgb(0, 0, 0)", fontSize: "20px" }}
                     >
-                      31%
                     </text>
                   </svg>
                 </div>
