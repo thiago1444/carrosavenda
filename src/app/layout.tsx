@@ -5,6 +5,7 @@ import { DataProvider } from "@/context/DataContext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Toaster } from "sonner";
+import Script from "next/script";
 
 const poppins = Poppins({ subsets: ['latin'], weight: ["400", "500", "600", "700"] });
 
@@ -27,6 +28,8 @@ export default function RootLayout({
           {children}
 
           <Toaster position="top-center" expand={false} visibleToasts={2} />
+
+          <Script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async defer />
         </DataProvider>
       </body>
     </html>
